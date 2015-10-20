@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Testing Attribute-Selectors</title>
+        <style type="text/css"> 
+        body {
+            margin: 1rem;
+        }
+        p {
+            line-height: 1.6rem;
+            font-size: 1.3rem;
+            color: #666;
+        }
+        code {
+            font-size: 1.4rem;
+            font-style: normal;
+            font-weight: normal;
+            color: #999;
+        }
+        .container {
+            padding: 1rem;
+            margin: 0 0 1rem 0;
+            border: 1px solid #CCC;
+        }
+
+
+
+        /**************************
+        Testing attribute-selectors
+        ***************************/
+            
+        /* First Container */
+        #title {
+            font-weight: bold;
+        }
+        .magic {
+            font-style: italic;
+        }
+        [rel="friend"] {
+            color: cornflowerblue;
+        }
+        
+        
+            
+        /* Second Container */
+        [href="http://perishablepress.com"] { 
+            color: coral; 
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: bold;
+        }
+            
+            
+        /* Third Container */
+        /* "*=" means "match the following value anywhere in the attribute value. */
+        [rel*="external"] {
+            color: darkseagreen; 
+            font-style: italic;
+            font-weight: bold;
+        }
+            
+        /* Fourth Container */
+        /* "^=" means attribute begins with a certain value  */
+        [rel^="external"] {
+            color: darkorange; 
+            font-style: italic;
+            font-weight: bold;
+        }
+            
+        /* Fifth Container */
+        /* "$=" means attribute ends with a certain value  */
+        [href$=".pdf"] {
+            color: deeppink; 
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: bold;
+        }
+            
+        /* Sixth Container */
+        /* "|=" This will select if the start of a dash-separated list of attribute values matches the selector.  */
+        [rel|="break"] {
+            color: darkgoldenrod; 
+            font-style: italic;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <p id="title" class="magic" rel="friend">This paragraph has the <code>font-weight: bold</code> based on its id <code>#title</code>. It has <code>font-style: italic</code> based on its class <code>.magic</code> and has the <code>color: cornflowerblue</code> based on its attribute selector <code>[rel="friend"]</code>.</p>
+        </div>
+        
+        <div class="container">
+            <p>The link - <a href="http://perishablepress.com">Jeff Starr</a> - is styled based on the attribute selector <code>[href="http://perishablepress.com"]</code>. As you notice, the entire URL is used as value of this attribute selector.</p>
+        </div>
+        
+        <div class="container">
+            <p rel="xxxexternalxxx">This paragraph has the attribute <code>rel="xxxexternalxxx"</code> and is styled based on the attribute selector <code>[rel*="external"]</code>.<br>"*=" means match the following value anywhere in the attribute value.</p>
+        </div>
+        
+        <div class="container">
+            <p rel="external-link yep">This paragraph has the attribute <code>rel="external-link yep"</code> and is styled based on the attribute selector <code>[rel^="external"]</code>.<br>"^=" means attribute begins with a certain value.</p>
+        </div>
+        
+        <div class="container">
+            <p>The link - <a href="document.pdf">Jeff Starr</a> - has the attribute <code>href="document.pdf"</code> and is styled based on the attribute selector <code>[href$=".pdf"]</code>.<br>"$=" means attribute ends with a certain value.</p>
+        </div>
+        
+        <div class="container">
+            <p rel="break-external-sandwich">This paragraph has the attribute <code>rel="break-external-sandwich"</code> and is styled based on the attribute selector <code>[rel|="break"]</code>.<br>"|=" This will select if the start of a dash-separated list of attribute values matches the selector.</p>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

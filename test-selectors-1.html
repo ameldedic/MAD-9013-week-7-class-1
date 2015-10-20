@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Testing Pseudo-Classes</title>
+        <style type="text/css"> 
+            
+        /*************
+        General Layout
+        **************/
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            margin: 0;
+            padding: 0; 
+        }
+        body {
+            min-width: 80rem;
+            margin: 1rem;
+            padding: 0; 
+            line-height: 1.3rem;
+            color: #CCC;
+        }
+        body::after {
+            content: "";
+            display: block;
+            clear: both; 
+        }
+        code {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .container {
+            width: calc(20% - 0.8rem);
+            float: left;
+            padding: 1rem;
+            border: 1px solid #CCC;
+            margin: 0 1rem 0 0;
+        }
+        .container:last-of-type {
+            margin: 0;
+        }
+
+
+
+            
+        /*********************
+        Testing pseudo-classes
+        **********************/
+
+        #first p:nth-child(3){
+            color: coral;
+        }
+        #first p:not([rel="friend"]){
+            color: cornflowerblue;
+        }
+        #second p:nth-child(2n){
+            color: coral;
+        }
+        #third p:nth-child(2n+3){
+            color: coral;
+        }
+        #fourth p:nth-child(odd){
+            color: coral;
+        }
+        #fifth p:nth-child(even){
+            color: coral;
+        }    
+        
+        </style>
+    </head>
+    
+    <body>
+        <div class="container" id="first">
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:not([rel="friend"])</code><br>
+                It means: THIS PARAGRAPH DOESN'T CONTAIN THE ATTRIBUTE <code>[rel="friend"]</code>
+            </p>
+
+            <p rel="friend">
+                Tamen appellat se concursionibus o consequat aute 
+                ullamco. Quamquam ipsum irure aut quorum sed 
+                occaecat quae nescius. 
+            </p>
+
+            <p rel="friend">
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(3)</code><br>
+                It means: THE THIRD PARAGRAPH.
+            </p>
+
+            <p rel="friend">
+                Magna ne ubi sint vidisse, deserunt se labore ab 
+                nam quo quis veniam quem, ut appellat transferrem 
+                id non quorum offendit.
+            </p>
+
+            <p rel="friend">
+                Quis ab mentitum, noster et doctrina ab aliqua, 
+                ingeniis do magna pariatur e singulis ad legam 
+                probant.             
+            </p>
+        </div>
+        <div class="container" id="second">
+            <p>
+                Eram mentitum non vidisse, ullamco ab mandaremus 
+                ita consequat arbitrantur est eiusmod, si multos 
+                ex elit. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(2n)</code><br>
+                It means: EVERY SECOND.
+            </p>
+
+            <p>
+                Excepteur fidelissimae ut appellat si ne ullamco 
+                hic singulis, te culpa comprehenderit, tamen 
+                consequat fabulas. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(2n)</code><br>
+                It means: EVERY SECOND.
+            </p>
+
+            <p>
+                Quis ab mentitum, noster et doctrina ab aliqua, 
+                ingeniis do magna pariatur e singulis ad legam 
+                probant.             
+            </p>
+        </div>
+        <div class="container" id="third">
+            <p>
+                Eram mentitum non vidisse, ullamco ab mandaremus 
+                ita consequat arbitrantur est eiusmod, si multos 
+                ex elit. 
+            </p>
+
+            <p>
+                Tamen appellat se concursionibus o consequat aute 
+                ullamco. Quamquam ipsum irure aut quorum sed 
+                occaecat quae nescius. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(2n+3)</code><br>
+                It means: EVERY SECOND STARTING WITH THE THIRD.
+            </p> 
+
+            <p>
+                Magna ne ubi sint vidisse, deserunt se labore ab 
+                nam quo quis veniam quem, ut appellat transferrem 
+                id non quorum offendit. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(2n+3)</code><br>
+                It means: EVERY SECOND STARTING WITH THE THIRD.
+            </p>             
+        </div>
+        <div class="container" id="fourth">
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(odd)</code><br>
+                It means: EVERY PARAGRAPH INDEXED WITH AN ODD NUMBER (1, 3, 5 ...). 
+            </p>
+
+            <p>
+                Tamen appellat se concursionibus o consequat aute 
+                ullamco. Quamquam ipsum irure aut quorum sed 
+                occaecat quae nescius. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(odd)</code><br>
+                It means: EVERY PARAGRAPH INDEXED WITH AN ODD NUMBER (1, 3, 5 ...).  
+            </p>
+
+            <p>
+                Magna ne ubi sint vidisse, deserunt se labore ab 
+                nam quo quis veniam quem, ut appellat transferrem 
+                id non quorum offendit. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(odd)</code><br>
+                It means: EVERY PARAGRAPH INDEXED WITH AN ODD NUMBER (1, 3, 5 ...).              
+            </p>
+        </div>
+        <div class="container" id="fifth">
+            <p>
+                Eram mentitum non vidisse, ullamco ab mandaremus 
+                ita consequat arbitrantur est eiusmod, si multos 
+                ex elit. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(even)</code><br>
+                It means: EVERY PARAGRAPH INDEXED WITH AN EVEN NUMBER (2, 4, ...).  
+            </p>
+
+            <p>
+                Excepteur fidelissimae ut appellat si ne ullamco 
+                hic singulis, te culpa comprehenderit, tamen 
+                consequat fabulas. 
+            </p>
+
+            <p>
+                This paragraph is affected by the CSS rule:<br>
+                <code>p:nth-child(even)</code><br>
+                It means: EVERY PARAGRAPH INDEXED WITH AN EVEN NUMBER (2, 4, ...).
+            </p>
+
+            <p>
+                Quis ab mentitum, noster et doctrina ab aliqua, 
+                ingeniis do magna pariatur e singulis ad legam 
+                probant.             
+            </p>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
