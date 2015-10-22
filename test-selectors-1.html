@@ -48,16 +48,23 @@
         /*********************
         Testing pseudo-classes
         **********************/
-
-        #first p:nth-child(3){
-            color: coral;
-        }
-        #first p:not([rel="friend"]){
-            color: cornflowerblue;
-        }
-        #second p:nth-child(2n){
-            color: coral;
-        }
+        /* 
+        Use :nth-child() pseudo class to target the third paragraph that belongs to the div >>#first<<.
+        Change the font color to >>coral<<.  */
+        #first ...
+        
+        /* 
+        Use :not() pseudo class to target the all paragraphs inside the div >>#first<< 
+        that don't contain the attribute >>rel="friend"<<.
+        Change the font color to >>cornflowerblue<<.  */
+        #first ...
+        
+        /* 
+        Use :nth-child() pseudo class to target the every second paragraph inside the div >>#second<<. 
+        Change the font color to >>coral<<.  */
+        #second ...
+        
+        
         #third p:nth-child(2n+3){
             color: coral;
         }
