@@ -61,7 +61,7 @@
             
         /* Third Container */
         /*
-        2.
+        3.
         Use attribute selector to target the paragraph that contains >>external<< in the value of its attribute >>rel<<. 
         Use operator >>*=<< ( meaning match the following value anywhere in the attribute value ).
         Set the following properties for that paragraph:
@@ -69,31 +69,44 @@
             font-style: italic;
             font-weight: bold; */
             
+            
+            
         /* Fourth Container */
-        /* "^=" means attribute begins with a certain value  */
-        [rel^="external"] {
+        /*
+        4.
+        Use attribute selector to target the paragraph that begins with >>external<< in the value of its attribute >>rel<<. 
+        Use operator >>^=<< ( meaning attribute begins with a certain value ).
+        Set the following properties for that paragraph:
             color: darkorange; 
             font-style: italic;
-            font-weight: bold;
-        }
+            font-weight: bold; */
+            
+            
             
         /* Fifth Container */
-        /* "$=" means attribute ends with a certain value  */
-        [href$=".pdf"] {
+        /*
+        5.
+        Use attribute selector to target the link that ends with >>.pdf<< in the value of its attribute >>href<<. 
+        Use operator >>$=<< ( meaning attribute ends with a certain value ).
+        Set the following properties for that link:
             color: deeppink; 
             text-decoration: none;
             font-size: 1.5rem;
             font-style: italic;
-            font-weight: bold;
-        }
+            font-weight: bold; */
+            
             
         /* Sixth Container */
-        /* "|=" This will select if the start of a dash-separated list of attribute values matches the selector.  */
-        [rel|="break"] {
+        /*
+        6.
+        Use attribute selector to target the paragraph that begins with >>break<< in the dash separated value of 
+        its attribute >>rel<<. 
+        Use operator >>|=<< ( meaning this will select if the start of a dash-separated list of attribute values matches the selector. ).
+        Set the following properties for that paragraph:
             color: darkgoldenrod; 
             font-style: italic;
-            font-weight: bold;
-        }
+            font-weight: bold; */
+            
         </style>
     </head>
     
