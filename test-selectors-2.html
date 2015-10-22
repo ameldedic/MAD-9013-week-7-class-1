@@ -37,29 +37,37 @@
         .magic {
             font-style: italic;
         }
-        [rel="friend"] {
-            color: cornflowerblue;
-        }
+        
+        /*
+        1.
+        Use attribute selector to target the paragraph that has the attribute >>rel="friend"<<.
+        Change its font-color to >>cornflowerblue<<. */
+        
         
         
             
         /* Second Container */
-        [href="http://perishablepress.com"] { 
+        /*
+        2.
+        Use attribute selector to target the link that has the attribute >>href="http://perishablepress.com"<<.
+        Set the following properties for that link:
             color: coral; 
             text-decoration: none;
             font-size: 1.5rem;
             font-style: italic;
-            font-weight: bold;
-        }
+            font-weight: bold; */
+    
             
             
         /* Third Container */
-        /* "*=" means "match the following value anywhere in the attribute value. */
-        [rel*="external"] {
+        /*
+        2.
+        Use attribute selector to target the paragraph that contains >>external<< in the value of its attribute >>rel<<. 
+        Use operator >>*=<< ( meaning match the following value anywhere in the attribute value ).
+        Set the following properties for that paragraph:
             color: darkseagreen; 
             font-style: italic;
-            font-weight: bold;
-        }
+            font-weight: bold; */
             
         /* Fourth Container */
         /* "^=" means attribute begins with a certain value  */
